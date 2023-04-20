@@ -1,0 +1,19 @@
+<div class="main-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <input matInput type="text" id="name" formControlName="name" placeholder="Name">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" id="phone" formControlName="phone" placeholder="Phone">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Customer Type</mat-label>
+            <mat-select formControlName="customerType" placeholder="Customer Type">
+              <mat-option *ngFor="let type of customerTypes" [value]="type">{{ type }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </form>
+</div>
+
+  

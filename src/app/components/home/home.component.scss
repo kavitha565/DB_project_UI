@@ -1,0 +1,23 @@
+.main-container{
+    display: flex;
+    flex-direction: row;
+    //width: 100%;
+    padding: 2rem;
+    .customers-container{
+        //width: 50%;
+        margin-right: 2rem;
+    }
+    .cars-container{
+        //width: 50%;
+    }
+    .table-container{
+        height: 500px;
+        overflow-y: auto;
+        table{
+            width: 100%;
+        }
+    }
+    
+}
+
+

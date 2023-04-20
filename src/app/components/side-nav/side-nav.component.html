@@ -1,0 +1,15 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened>
+      <!-- Side navigation menu content goes here -->
+      <ul>
+        <li routerLink="/home" routerLinkActive="active" (click)="sidenav.close()">Home</li>
+        <li routerLink="/addCustomer" routerLinkActive="active" (click)="sidenav.close()">Add Customer</li>
+        <li routerLink="/addCar" routerLinkActive="active" (click)="sidenav.close()">Add Car</li>
+      </ul>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">
+      <!-- Main content of the page goes here -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

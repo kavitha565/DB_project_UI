@@ -1,0 +1,124 @@
+<div class="main-container">
+    <form [formGroup]="availabilityForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <mat-label>Car type</mat-label>
+            <mat-select formControlName="carType" placeholder="Car type">
+                <mat-option *ngFor="let type of carTypes" [value]="type">{{ type }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Car category</mat-label>
+            <mat-select formControlName="carCategory" placeholder="Car category">
+                <mat-option *ngFor="let category of carCategories" [value]="category">{{ category }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" id="startDate" formControlName="startDate" placeholder="Start Date">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" id="endDate" formControlName="endDate" placeholder="End Date">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Check availability</button>
+    </form>
+
+    <div *ngIf="availabilityFormSubmitted">
+        <div *ngIf="rentals.length;else noCarsTemplate">
+            <h3>Available Cars</h3>
+            <table mat-table [dataSource]="rentals" class="mat-elevation-z8">
+    
+                <ng-container matColumnDef="vehicleID">
+                    <th mat-header-cell *matHeaderCellDef> Vehicle ID </th>
+                    <td mat-cell *matCellDef="let element"> {{element.vehicleID}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="ownerId">
+                    <th mat-header-cell *matHeaderCellDef> Owner ID </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ownerId}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="model">
+                    <th mat-header-cell *matHeaderCellDef> Model </th>
+                    <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="year">
+                    <th mat-header-cell *matHeaderCellDef> Year</th>
+                    <td mat-cell *matCellDef="let element"> {{element.year}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="location">
+                    <th mat-header-cell *matHeaderCellDef> Rental location </th>
+                    <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="carType">
+                    <th mat-header-cell *matHeaderCellDef> Car type </th>
+                    <td mat-cell *matCellDef="let element"> {{element.carType}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="carCategory">
+                    <th mat-header-cell *matHeaderCellDef> Car category </th>
+                    <td mat-cell *matCellDef="let element"> {{element.carCategory}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="dailyRate">
+                    <th mat-header-cell *matHeaderCellDef> Daily type</th>
+                    <td mat-cell *matCellDef="let element"> {{element.dailyRate}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="weeklyRate">
+                    <th mat-header-cell *matHeaderCellDef> Weekly rate</th>
+                    <td mat-cell *matCellDef="let element"> {{element.weeklyRate}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef>Action</th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button color="primary" (click)="rentCar(element.vehicleID)">
+                            Rent
+                        </button>
+                    </td>
+                </ng-container>
+    
+                <tr mat-header-row *matHeaderRowDef="carColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: carColumns;"></tr>
+            </table>
+        </div>
+        <ng-template #noCarsTemplate>
+            <h3>No cars available</h3>
+        </ng-template>
+    </div>
+
+    <form *ngIf="showRentForm" [formGroup]="rentalForm" (ngSubmit)="rentFormSubmit()">
+        <mat-form-field>
+            <input matInput type="text" id="custID" formControlName="custID" placeholder="Customer Id">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" id="carID" formControlName="carID" placeholder="Vehicle no">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Rental status</mat-label>
+            <mat-select formControlName="rentalStatus" placeholder="Rental status">
+                <mat-option *ngFor="let type of rentalStatusTypes" [value]="type">{{ type }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Rental type</mat-label>
+            <mat-select formControlName="rentalType" placeholder="Rental type">
+                <mat-option *ngFor="let type of rentalTypes" [value]="type">{{ type }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field *ngIf="rentalForm.get('rentalType')?.value == 'Daily'">
+            <input matInput type="text" id="noOfDays" formControlName="noOfDays" placeholder="No of days">
+        </mat-form-field>
+        <mat-form-field *ngIf="rentalForm.get('rentalType')?.value == 'Weekly'">
+            <input matInput type="text" id="noOfWeeks" formControlName="noOfWeeks" placeholder="No of weeks">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" id="startDate" formControlName="startDate" placeholder="Start Date">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+        <button mat-raised-button color="primary" (click)="goBack()">Back</button>
+    </form>
+
+</div>

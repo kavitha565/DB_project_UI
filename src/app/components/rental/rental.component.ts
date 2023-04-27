@@ -22,10 +22,10 @@ export class RentalComponent implements OnInit {
 
   ngOnInit(): void {
     this.availabilityForm = this.fb.group({
-      carType: ['Compact'],
-      carCategory: ['Regular'],
-      startDate: ['2023-05-02'],
-      endDate: ['2023-05-04']
+      carType: [''],
+      carCategory: [''],
+      startDate: [''],
+      endDate: ['']
     });
 
     this.rentalForm = this.fb.group({

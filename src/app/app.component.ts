@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Car-Rental-UI';
+  
+routes =  [
+  { path: 'home',label:'home' },
+  { path: 'addCustomer', label:'addCustomer' },
+  { path: 'addCar', label:'addCar' },
+  { path: 'rental',  label:'rental' },
+ ];
 }

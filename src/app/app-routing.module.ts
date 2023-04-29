@@ -7,6 +7,7 @@ import { RentalComponent } from './components/rental/rental.component';
 import { AppComponent } from './app.component';
 import { ReturnRentalComponent } from './components/return-rental/return-rental.component';
 import { UpdateRatesComponent } from './components/update-rates/update-rates.component';
+import { WeeklyReportComponent } from './components/weekly-report/weekly-report.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'rental', component: RentalComponent },
   { path: 'returnRental', component: ReturnRentalComponent },
   { path: 'updateRate', component: UpdateRatesComponent },
+  { path: 'weeklyReport', component: WeeklyReportComponent },
   { path: '', component: HomeComponent }
 ];
 

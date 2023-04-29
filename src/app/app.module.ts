@@ -22,6 +22,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { ReturnRentalComponent } from './components/return-rental/return-rental.component';
 import { UpdateRatesComponent } from './components/update-rates/update-rates.component';
+import { WeeklyReportComponent } from './components/weekly-report/weekly-report.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { UpdateRatesComponent } from './components/update-rates/update-rates.com
     AddCarComponent,
     RentalComponent,
     ReturnRentalComponent,
-    UpdateRatesComponent
+    UpdateRatesComponent,
+    WeeklyReportComponent
   ],
   imports: [
     BrowserModule,

@@ -15,5 +15,6 @@ routes =  [
   { path: 'rental',  label:'Add Rental' },
   { path: 'returnRental',  label:'Return Rental' },
   { path: 'updateRate',  label:'Update Rate' },
+  { path: 'weeklyReport', label: 'Weekly Report' }
  ];
 }

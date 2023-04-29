@@ -55,4 +55,8 @@ export class CommonService {
     return this.http.post<any>(environment.endpoint.updateRates, payload);
   }
 
+  getWeeklyReport(payload: any): Observable<any> {
+    return this.http.post<any>(environment.endpoint.weeklyReport, payload);
+  }
+
 }

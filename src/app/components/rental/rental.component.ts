@@ -47,7 +47,6 @@ export class RentalComponent implements OnInit {
     .subscribe({
       next: (data) => {
         this.rentals = data.availableCars
-        this.availabilityForm.reset();
       },
       error: (e) => {
         alert('Error occured while getting avaliable cars. Please try again');

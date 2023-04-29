@@ -20,6 +20,9 @@ import { RentalComponent } from './components/rental/rental.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { ReturnRentalComponent } from './components/return-rental/return-rental.component';
+import { UpdateRatesComponent } from './components/update-rates/update-rates.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { MatListModule } from '@angular/material/list';
     HomeComponent,
     AddCustomerComponent,
     AddCarComponent,
-    RentalComponent
+    RentalComponent,
+    ReturnRentalComponent,
+    UpdateRatesComponent
   ],
   imports: [
     BrowserModule,

@@ -9,9 +9,11 @@ export class AppComponent {
   title = 'Car_UI_app';
   
 routes =  [
-  { path: 'home',label:'home' },
-  { path: 'addCustomer', label:'addCustomer' },
-  { path: 'addCar', label:'addCar' },
-  { path: 'rental',  label:'rental' },
+  { path: 'home',label:'Home' },
+  { path: 'addCustomer', label:'Add Customer' },
+  { path: 'addCar', label:'Add Car' },
+  { path: 'rental',  label:'Add Rental' },
+  { path: 'returnRental',  label:'Return Rental' },
+  { path: 'updateRate',  label:'Update Rate' },
  ];
 }

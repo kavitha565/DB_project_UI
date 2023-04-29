@@ -1,0 +1,60 @@
+
+<div class="rental-container">
+    <h2>Rentals</h2>
+    <div class="table-container">
+        <table mat-table [dataSource]="rentals" class="mat-elevation-z8">
+  
+            <ng-container matColumnDef="custID">
+              <th mat-header-cell *matHeaderCellDef> Customer ID </th>
+              <td mat-cell *matCellDef="let element"> {{element.custID}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="carID">
+              <th mat-header-cell *matHeaderCellDef> Vehicle no </th>
+              <td mat-cell *matCellDef="let element"> {{element.carID}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="rentalStatus">
+              <th mat-header-cell *matHeaderCellDef> Rental status </th>
+              <td mat-cell *matCellDef="let element"> {{element.rentalStatus}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="rentalType">
+              <th mat-header-cell *matHeaderCellDef> Rental type </th>
+              <td mat-cell *matCellDef="let element"> {{element.rentalType}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="noOfDays">
+              <th mat-header-cell *matHeaderCellDef> No of days </th>
+              <td mat-cell *matCellDef="let element"> {{element.noOfDays}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="noOfWeeks">
+              <th mat-header-cell *matHeaderCellDef> No of weeks</th>
+              <td mat-cell *matCellDef="let element"> {{element.noOfWeeks}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="startDate">
+              <th mat-header-cell *matHeaderCellDef> Start date </th>
+              <td mat-cell *matCellDef="let element"> {{element.startDate}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="endDate">
+              <th mat-header-cell *matHeaderCellDef> End date </th>
+              <td mat-cell *matCellDef="let element"> {{element.endDate}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef>Action</th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button color="primary" (click)="returnCar(element.rentalID,element.carID)">
+                            Return
+                        </button>
+                    </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="rentalColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: rentalColumns;"></tr>
+          </table>
+    </div>
+  </div>

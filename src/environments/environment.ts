@@ -8,7 +8,10 @@ export const environment = {
     customersUrl : "http://127.0.0.1:5000/customers",
     carsUrl : "http://127.0.0.1:5000/cars",
     availabilityUrl : "http://127.0.0.1:5000/availability",
-    rentalUrl : "http://127.0.0.1:5000/rental"
+    rentalUrl : "http://127.0.0.1:5000/rental",
+    ownersUrl: "http://127.0.0.1:5000/owners",
+    returnUrl: "http://127.0.0.1:5000/rentalAmount",
+    updateRates: "http://127.0.0.1:5000/updateRates",
   }
 };
 

@@ -15,6 +15,10 @@ export class CommonService {
     return this.http.get<any>(environment.endpoint.customersUrl);
   }
 
+  getOwnersData(): Observable<any> {
+    return this.http.get<any>(environment.endpoint.ownersUrl);
+  }
+
   getCarsData(): Observable<any> {
     return this.http.get<any>(environment.endpoint.carsUrl);
   }
@@ -31,12 +35,24 @@ export class CommonService {
     return this.http.post<any>(environment.endpoint.carsUrl, payload);
   }
 
+  getAvailabilityData(): Observable<any> {
+    return this.http.get<any>(environment.endpoint.availabilityUrl);
+  }
+
   getAvailableRentals(payload: any): Observable<any> {
     return this.http.post<any>(environment.endpoint.availabilityUrl, payload);
   }
 
   addRental(payload: any): Observable<any> {
     return this.http.post<any>(environment.endpoint.rentalUrl, payload);
+  }
+
+  returnRental(payload: any): Observable<any> {
+    return this.http.post<any>(environment.endpoint.returnUrl, payload);
+  }
+
+  updateRates(payload: any): Observable<any> {
+    return this.http.post<any>(environment.endpoint.updateRates, payload);
   }
 
 }

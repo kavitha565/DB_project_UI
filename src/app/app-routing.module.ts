@@ -5,12 +5,16 @@ import { AddCustomerComponent } from './components/add-customer/add-customer.com
 import { AddCarComponent } from './components/add-car/add-car.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { AppComponent } from './app.component';
+import { ReturnRentalComponent } from './components/return-rental/return-rental.component';
+import { UpdateRatesComponent } from './components/update-rates/update-rates.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'addCustomer', component: AddCustomerComponent },
   { path: 'addCar', component: AddCarComponent },
   { path: 'rental', component: RentalComponent },
+  { path: 'returnRental', component: ReturnRentalComponent },
+  { path: 'updateRate', component: UpdateRatesComponent },
   { path: '', component: HomeComponent }
 ];
 

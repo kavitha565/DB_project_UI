@@ -27,7 +27,7 @@ export class UpdateRatesComponent implements OnInit {
     .subscribe({
       next: (data) => {
         alert("Car rates updated successfully");
-        this.form.reset();
+        
       },
       error: (e) => {
         alert("Error occured while updating car rates. Please try again");

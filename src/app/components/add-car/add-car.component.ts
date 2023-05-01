@@ -34,12 +34,12 @@ export class AddCarComponent implements OnInit {
       next: (data) => {
         alert("Car aded successfully");
         console.log('Form submitted successfully', data);
-        this.form.reset();
+        
       },
       error: (e) => {
         alert("Error occured while adding car. Please try again");
         console.error('Error submitting form', e);
-        this.form.reset();
+        
       }
     });
   }

@@ -29,12 +29,12 @@ export class AddCustomerComponent implements OnInit {
         next: (data) => {
           alert("Customer aded successfully");
           console.log('Form submitted successfully', data);
-          this.form.reset();
+          
         },
         error: (e) => {
           alert("Error occured while adding customer. Please try again");
           console.error('Error submitting form', e);
-          this.form.reset();
+          
         }
       });
   }

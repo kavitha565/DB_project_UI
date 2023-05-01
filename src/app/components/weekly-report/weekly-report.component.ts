@@ -28,7 +28,7 @@ export class WeeklyReportComponent  implements OnInit {
     .subscribe({
       next: (data) => {
         this.weeklyEarnings = data;
-        this.form.reset();
+        
       },
       error: (e) => {
         alert("Error occured while fetching weekly report!");

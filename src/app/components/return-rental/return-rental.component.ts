@@ -34,7 +34,7 @@ export class ReturnRentalComponent implements OnInit {
     this.commonService.returnRental(payload)
       .subscribe({
         next: (data) => {
-          alert(data.rentalAmount);
+          alert("Amount due: "+data.rentalAmount);
         },
         error: (e) => console.error(e)
       });
